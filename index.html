@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yvan Tankeu — Azure Cloud Administrator</title>
+  <meta name="description" content="CV de Yvan Tankeu, Technicien IAM et Administrateur Azure certifié AZ-104, basé à Moncton NB Canada." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:    #0078d4;
+      --dark:    #1a1a2e;
+      --gray:    #4a5568;
+      --light:   #f7f9fc;
+      --border:  #e2e8f0;
+      --accent:  #e8f4fd;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+      color: #fff;
+      padding: 48px 48px 36px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    header .title {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: .85;
+      margin-bottom: 20px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: .88rem;
+      opacity: .92;
+    }
+
+    .contact-row a { color: #fff; }
+    .contact-row span::before { content: '·'; margin-right: 6px; opacity: .6; }
+    .contact-row span:first-child::before { display: none; }
+
+    /* ── Body ── */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 0;
+    }
+
+    .main   { padding: 40px 40px 40px 48px; border-right: 1px solid var(--border); }
+    .sidebar { padding: 40px 32px; background: var(--light); }
+
+    /* ── Section titles ── */
+    h2 {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--blue);
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    section { margin-bottom: 36px; }
+
+    /* ── Summary ── */
+    .summary p {
+      color: var(--gray);
+      font-size: .93rem;
+    }
+
+    /* ── Experience ── */
+    .job { margin-bottom: 24px; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .job-date {
+      font-size: .82rem;
+      color: var(--gray);
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-size: .88rem;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .job ul {
+      padding-left: 18px;
+      color: var(--gray);
+      font-size: .88rem;
+    }
+
+    .job ul li { margin-bottom: 3px; }
+
+    /* ── Projects ── */
+    .project {
+      background: var(--accent);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: .9rem;
+      margin-bottom: 4px;
+    }
+
+    .project p {
+      font-size: .83rem;
+      color: var(--gray);
+      margin-bottom: 6px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background: #fff;
+      border: 1px solid var(--blue);
+      color: var(--blue);
+      border-radius: 99px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      font-weight: 500;
+    }
+
+    /* ── Sidebar ── */
+    .skill-group { margin-bottom: 20px; }
+
+    .skill-group h3 {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .skill-group .tags .tag {
+      background: #fff;
+      border-color: var(--border);
+      color: var(--gray);
+    }
+
+    .cert {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .cert-badge {
+      background: var(--blue);
+      color: #fff;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: .72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .cert-info .cert-name { font-size: .88rem; font-weight: 500; }
+    .cert-info .cert-date { font-size: .78rem; color: var(--gray); }
+
+    .edu-item { margin-bottom: 14px; }
+    .edu-item .edu-degree { font-size: .88rem; font-weight: 600; }
+    .edu-item .edu-school { font-size: .82rem; color: var(--gray); }
+    .edu-item .edu-date   { font-size: .78rem; color: var(--blue); }
+
+    /* ── Language ── */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: .85rem;
+      margin-bottom: 6px;
+    }
+    .lang-level { color: var(--gray); }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .page { margin: 0; border-radius: 0; }
+      header { padding: 32px 24px; }
+      .body { grid-template-columns: 1fr; }
+      .main { padding: 28px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .sidebar { padding: 28px 24px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; margin: 0; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Yvan Tankeu</h1>
+    <p class="title">Azure Cloud Administrator · Technicien IAM · AZ-104 Certifié</p>
+    <div class="contact-row">
+      <span><a href="mailto:yvantankeu@yahoo.fr">yvantankeu@yahoo.fr</a></span>
+      <span>+1 (438) 993-2508</span>
+      <span>Moncton, NB, Canada</span>
+      <span><a href="https://linkedin.com/in/yvan-tankeu" target="_blank">LinkedIn</a></span>
+      <span><a href="https://github.com/YvanTankeu" target="_blank">GitHub</a></span>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Synthèse -->
+      <section class="summary">
+        <h2>Profil</h2>
+        <p>
+          Professionnel certifié Azure (AZ-104), spécialisé en gestion des identités et des accès (IAM).
+          Actuellement Technicien IAM à UNI Moncton, je combine une solide expérience en administration cloud,
+          sécurité des accès et infrastructure réseau. Rigoureux, orienté solution, je construis activement
+          un portfolio de projets Azure pour approfondir mes compétences en architecture cloud.
+        </p>
+      </section>
+
+      <!-- Expérience -->
+      <section>
+        <h2>Expérience professionnelle</h2>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Technicien en gestion d'Identités et d'Accès (IAM)</span>
+            <span class="job-date">Janv. 2025 – Présent</span>
+          </div>
+          <div class="job-company">UNI — Moncton, NB</div>
+          <ul>
+            <li>Administration quotidienne des accès utilisateurs (octroi, retrait, modification)</li>
+            <li>Surveillance des demandes d'accès et des approbations selon les procédures établies</li>
+            <li>Soutien technique de premier niveau : authentification, MFA, réinitialisations</li>
+            <li>Support aux audits continus du système et du contrôle d'accès</li>
+            <li>Documentation et maintien à jour des procédures d'accès</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Administrateur Cloud Azure — Remote</span>
+            <span class="job-date">Janv. 2024 – Présent</span>
+          </div>
+          <div class="job-company">Freelance / Portfolio</div>
+          <ul>
+            <li>Administration de Microsoft Entra ID, identités cloud et intégration hybride</li>
+            <li>Déploiement et gestion de VMs, groupes de ressources et stockage Azure</li>
+            <li>Mise en place de réseaux virtuels (VNet), NSG et surveillance via Azure Monitor</li>
+            <li>Sauvegardes, restaurations et stratégies de haute disponibilité (HA/DR)</li>
+            <li>Optimisation des performances et des coûts des environnements Azure</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Technicien de soutien bilingue</span>
+            <span class="job-date">Sept. 2023 – Oct. 2024</span>
+          </div>
+          <div class="job-company">Nordia</div>
+          <ul>
+            <li>Support technique téléphonie, internet et messagerie</li>
+            <li>Diagnostic et résolution rapide d'incidents, suivi ticketing (JIRA, Zoho)</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Technicien des Systèmes Informatiques</span>
+            <span class="job-date">Janv. 2017 – Fév. 2020</span>
+          </div>
+          <div class="job-company">SIDPA — Yaoundé, Cameroun</div>
+          <ul>
+            <li>Mise en place de postes de travail, réseaux et logiciels</li>
+            <li>Gestion des mises à jour et continuité opérationnelle des systèmes</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projets Azure -->
+      <section>
+        <h2>Projets Azure — Portfolio</h2>
+
+        <div class="project">
+          <div class="project-title">Projet 1 — Déploiement WordPress sur Azure VM</div>
+          <p>
+            Déployé un serveur WordPress complet sur Azure VM Ubuntu 22.04 via Azure CLI.
+            Configuration d'une architecture réseau (VNet, Subnet, NSG) et installation manuelle
+            d'une stack LAMP (Apache, MySQL 8.0, PHP).
+          </p>
+          <div class="tags">
+            <span class="tag">Azure VM</span>
+            <span class="tag">VNet / NSG</span>
+            <span class="tag">Azure CLI</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Apache</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="project" style="opacity:.5;">
+          <div class="project-title">Projet 2 — Azure Blob Storage + CDN &nbsp;<small>(en cours)</small></div>
+          <p>Hébergement statique avec Azure Blob Storage et distribution via Azure CDN.</p>
+          <div class="tags">
+            <span class="tag">Storage Account</span>
+            <span class="tag">CDN</span>
+            <span class="tag">Azure CLI</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- Certifications -->
+      <section>
+        <h2>Certifications</h2>
+
+        <div class="cert">
+          <span class="cert-badge">AZ-104</span>
+          <div class="cert-info">
+            <div class="cert-name">Azure Administrator</div>
+            <div class="cert-date">Microsoft · Mai 2024</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <span class="cert-badge">AZ-305</span>
+          <div class="cert-info">
+            <div class="cert-name">Azure Architect Expert</div>
+            <div class="cert-date">En cours…</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Formation -->
+      <section>
+        <h2>Formation</h2>
+
+        <div class="edu-item">
+          <div class="edu-degree">Diplôme — Internet of Things (IoT)</div>
+          <div class="edu-school">CCNB — Bathurst, NB</div>
+          <div class="edu-date">Juin 2023</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">Baccalauréat — Génie Logiciel & BD</div>
+          <div class="edu-school">Université de Dschang, Cameroun</div>
+          <div class="edu-date">Nov. 2017 · Évaluation WES</div>
+        </div>
+      </section>
+
+      <!-- Compétences -->
+      <section>
+        <h2>Compétences</h2>
+
+        <div class="skill-group">
+          <h3>IAM & Sécurité</h3>
+          <div class="tags">
+            <span class="tag">Entra ID</span>
+            <span class="tag">MFA</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">PIM</span>
+            <span class="tag">SSO</span>
+            <span class="tag">SAML</span>
+            <span class="tag">OAuth 2.0</span>
+            <span class="tag">Saviynt</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Azure Cloud</h3>
+          <div class="tags">
+            <span class="tag">VM</span>
+            <span class="tag">VNet</span>
+            <span class="tag">NSG</span>
+            <span class="tag">Storage</span>
+            <span class="tag">Azure Monitor</span>
+            <span class="tag">Azure Backup</span>
+            <span class="tag">Azure CLI</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Infrastructure</h3>
+          <div class="tags">
+            <span class="tag">Linux</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">M365</span>
+            <span class="tag">Docker</span>
+            <span class="tag">SSH</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Outils</h3>
+          <div class="tags">
+            <span class="tag">JIRA</span>
+            <span class="tag">Zoho</span>
+            <span class="tag">Git</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Langues -->
+      <section>
+        <h2>Langues</h2>
+        <div class="lang-item">
+          <span>Français</span>
+          <span class="lang-level">Natif</span>
+        </div>
+        <div class="lang-item">
+          <span>Anglais</span>
+          <span class="lang-level">Intermédiaire</span>
+        </div>
+      </section>
+
+    </aside>
+  </div>
+</div>
+
+<!-- Vercel Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
