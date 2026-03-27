@@ -206,7 +206,8 @@
     .lang-level { color: var(--gray); }
 
     /* ── i18n ── */
-    [data-fr], [data-en] { display: none; }
+    body.lang-fr [data-en] { display: none !important; }
+    body.lang-en [data-fr] { display: none !important; }
 
     /* ── Responsive ── */
     @media (max-width: 680px) {
@@ -593,8 +594,7 @@
 
 <script>
   function setLang(lang) {
-    document.querySelectorAll('[data-fr]').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
-    document.querySelectorAll('[data-en]').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.body.className = 'lang-' + lang;
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
     document.documentElement.lang = lang;
