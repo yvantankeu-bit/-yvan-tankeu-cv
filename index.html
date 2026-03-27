@@ -125,11 +125,7 @@
 
     section { margin-bottom: 36px; }
 
-    /* ── Summary ── */
-    .summary p {
-      color: var(--gray);
-      font-size: .93rem;
-    }
+    .summary p { color: var(--gray); font-size: .93rem; }
 
     /* ── Experience ── */
     .job { margin-bottom: 24px; }
@@ -143,16 +139,8 @@
       margin-bottom: 4px;
     }
 
-    .job-title {
-      font-weight: 600;
-      font-size: .95rem;
-    }
-
-    .job-date {
-      font-size: .82rem;
-      color: var(--gray);
-      white-space: nowrap;
-    }
+    .job-title { font-weight: 600; font-size: .95rem; }
+    .job-date  { font-size: .82rem; color: var(--gray); white-space: nowrap; }
 
     .job-company {
       font-size: .88rem;
@@ -161,12 +149,7 @@
       margin-bottom: 8px;
     }
 
-    .job ul {
-      padding-left: 18px;
-      color: var(--gray);
-      font-size: .88rem;
-    }
-
+    .job ul { padding-left: 18px; color: var(--gray); font-size: .88rem; }
     .job ul li { margin-bottom: 3px; }
 
     /* ── Projects ── */
@@ -178,23 +161,10 @@
       margin-bottom: 12px;
     }
 
-    .project-title {
-      font-weight: 600;
-      font-size: .9rem;
-      margin-bottom: 4px;
-    }
+    .project-title { font-weight: 600; font-size: .9rem; margin-bottom: 4px; }
+    .project p { font-size: .83rem; color: var(--gray); margin-bottom: 6px; }
 
-    .project p {
-      font-size: .83rem;
-      color: var(--gray);
-      margin-bottom: 6px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
     .tag {
       background: #fff;
@@ -208,26 +178,10 @@
 
     /* ── Sidebar ── */
     .skill-group { margin-bottom: 20px; }
+    .skill-group h3 { font-size: .8rem; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+    .skill-group .tags .tag { background: #fff; border-color: var(--border); color: var(--gray); }
 
-    .skill-group h3 {
-      font-size: .8rem;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .skill-group .tags .tag {
-      background: #fff;
-      border-color: var(--border);
-      color: var(--gray);
-    }
-
-    .cert {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
+    .cert { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
 
     .cert-badge {
       background: var(--blue);
@@ -248,13 +202,7 @@
     .edu-item .edu-school { font-size: .82rem; color: var(--gray); }
     .edu-item .edu-date   { font-size: .78rem; color: var(--blue); }
 
-    /* ── Language ── */
-    .lang-item {
-      display: flex;
-      justify-content: space-between;
-      font-size: .85rem;
-      margin-bottom: 6px;
-    }
+    .lang-item { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: 6px; }
     .lang-level { color: var(--gray); }
 
     /* ── i18n ── */
@@ -279,7 +227,6 @@
 </head>
 <body>
 
-<!-- Language switcher -->
 <div class="lang-switcher">
   <button class="lang-btn active" onclick="setLang('fr')">FR</button>
   <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -287,7 +234,6 @@
 
 <div class="page">
 
-  <!-- HEADER -->
   <header>
     <h1>Yvan Tankeu</h1>
     <p class="title">
@@ -299,16 +245,13 @@
       <span>+1 (506) 864-2872</span>
       <span>Moncton, NB, Canada</span>
       <span><a href="https://linkedin.com/in/yvan-tankeu" target="_blank">LinkedIn</a></span>
-      <span><a href="https://github.com/YvanTankeu" target="_blank">GitHub</a></span>
+      <span><a href="https://github.com/yvantankeu-bit" target="_blank">GitHub</a></span>
     </div>
   </header>
 
   <div class="body">
-
-    <!-- MAIN -->
     <main class="main">
 
-      <!-- Profil -->
       <section class="summary">
         <h2><span data-fr>Profil</span><span data-en>Profile</span></h2>
         <p data-fr>
@@ -325,7 +268,6 @@
         </p>
       </section>
 
-      <!-- Expérience -->
       <section>
         <h2><span data-fr>Expérience professionnelle</span><span data-en>Work Experience</span></h2>
 
@@ -362,7 +304,7 @@
             </span>
             <span class="job-date"><span data-fr>Janv. 2024 – Présent</span><span data-en>Jan. 2024 – Present</span></span>
           </div>
-          <div class="job-company"><span data-fr>Freelance / Portfolio</span><span data-en>Freelance / Portfolio</span></div>
+          <div class="job-company">Freelance / Portfolio</div>
           <ul data-fr>
             <li>Administration de Microsoft Entra ID, identités cloud et intégration hybride</li>
             <li>Déploiement et gestion de VMs, groupes de ressources et stockage Azure</li>
@@ -385,7 +327,7 @@
               <span data-fr>Technicien de soutien bilingue</span>
               <span data-en>Bilingual Support Technician</span>
             </span>
-            <span class="job-date"><span data-fr>Sept. 2023 – Oct. 2024</span><span data-en>Sept. 2023 – Oct. 2024</span></span>
+            <span class="job-date">Sept. 2023 – Oct. 2024</span>
           </div>
           <div class="job-company">Nordia</div>
           <ul data-fr>
@@ -418,7 +360,6 @@
         </div>
       </section>
 
-      <!-- Projets Azure -->
       <section>
         <h2><span data-fr>Projets Azure — Portfolio</span><span data-en>Azure Projects — Portfolio</span></h2>
 
@@ -535,16 +476,12 @@
         </div>
 
       </section>
-
     </main>
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
 
-      <!-- Certifications -->
       <section>
         <h2><span data-fr>Certifications</span><span data-en>Certifications</span></h2>
-
         <div class="cert">
           <span class="cert-badge">AZ-104</span>
           <div class="cert-info">
@@ -552,7 +489,6 @@
             <div class="cert-date">Microsoft · <span data-fr>Mai</span><span data-en>May</span> 2024</div>
           </div>
         </div>
-
         <div class="cert">
           <span class="cert-badge">AZ-305</span>
           <div class="cert-info">
@@ -562,24 +498,29 @@
         </div>
       </section>
 
-      <!-- Formation -->
       <section>
         <h2><span data-fr>Formation</span><span data-en>Education</span></h2>
-
         <div class="edu-item">
-          <div class="edu-degree"><span data-fr>Diplôme — Internet des Objets (IoT)</span><span data-en>Diploma — Internet of Things (IoT)</span></div>
+          <div class="edu-degree">
+            <span data-fr>Diplôme — Internet des Objets (IoT)</span>
+            <span data-en>Diploma — Internet of Things (IoT)</span>
+          </div>
           <div class="edu-school">CCNB — Bathurst, NB</div>
           <div class="edu-date"><span data-fr>Juin 2023</span><span data-en>June 2023</span></div>
         </div>
-
         <div class="edu-item">
-          <div class="edu-degree"><span data-fr>Baccalauréat — Génie Logiciel & BD</span><span data-en>Bachelor — Software Engineering & DB</span></div>
-          <div class="edu-school"><span data-fr>Université de Dschang, Cameroun</span><span data-en>University of Dschang, Cameroon</span></div>
+          <div class="edu-degree">
+            <span data-fr>Baccalauréat — Génie Logiciel &amp; BD</span>
+            <span data-en>Bachelor — Software Engineering &amp; DB</span>
+          </div>
+          <div class="edu-school">
+            <span data-fr>Université de Dschang, Cameroun</span>
+            <span data-en>University of Dschang, Cameroon</span>
+          </div>
           <div class="edu-date"><span data-fr>Nov. 2017 · Évaluation WES</span><span data-en>Nov. 2017 · WES Evaluation</span></div>
         </div>
       </section>
 
-      <!-- Compétences -->
       <section>
         <h2><span data-fr>Compétences</span><span data-en>Skills</span></h2>
 
@@ -607,6 +548,7 @@
             <span class="tag">Azure Monitor</span>
             <span class="tag">Azure Backup</span>
             <span class="tag">Azure CLI</span>
+            <span class="tag">Azure Firewall</span>
           </div>
         </div>
 
@@ -633,7 +575,6 @@
         </div>
       </section>
 
-      <!-- Langues -->
       <section>
         <h2><span data-fr>Langues</span><span data-en>Languages</span></h2>
         <div class="lang-item">
@@ -661,7 +602,6 @@
   setLang('fr');
 </script>
 
-<!-- Vercel Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
