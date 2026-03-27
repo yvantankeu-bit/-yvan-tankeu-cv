@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yvan Tankeu — Azure Cloud Administrator</title>
-  <meta name="description" content="CV de Yvan Tankeu, Technicien IAM et Administrateur Azure certifié AZ-104, basé à Moncton NB Canada." />
+  <meta name="description" content="CV de Yvan Tankeu, Administrateur IAM et Cloud Azure certifié AZ-104, basé à Moncton NB Canada." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -30,10 +30,38 @@
     a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* ── Lang switcher ── */
+    .lang-switcher {
+      display: flex;
+      justify-content: flex-end;
+      max-width: 900px;
+      margin: 20px auto 0;
+      padding: 0 8px;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      background: #fff;
+      border: 2px solid var(--border);
+      color: var(--gray);
+      border-radius: 99px;
+      padding: 5px 16px;
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .lang-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+
     /* ── Layout ── */
     .page {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 12px auto 40px;
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
@@ -229,6 +257,9 @@
     }
     .lang-level { color: var(--gray); }
 
+    /* ── i18n ── */
+    [data-fr], [data-en] { display: none; }
+
     /* ── Responsive ── */
     @media (max-width: 680px) {
       .page { margin: 0; border-radius: 0; }
@@ -236,25 +267,36 @@
       .body { grid-template-columns: 1fr; }
       .main { padding: 28px 24px; border-right: none; border-bottom: 1px solid var(--border); }
       .sidebar { padding: 28px 24px; }
+      .lang-switcher { margin: 12px 12px 0; }
     }
 
     @media print {
       body { background: #fff; }
       .page { box-shadow: none; margin: 0; border-radius: 0; }
+      .lang-switcher { display: none; }
     }
   </style>
 </head>
 <body>
+
+<!-- Language switcher -->
+<div class="lang-switcher">
+  <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
 
 <div class="page">
 
   <!-- HEADER -->
   <header>
     <h1>Yvan Tankeu</h1>
-    <p class="title">Azure Cloud Administrator · Technicien IAM · AZ-104 Certifié</p>
+    <p class="title">
+      <span data-fr>Administrateur Cloud Azure · Administrateur IAM · Certifié AZ-104</span>
+      <span data-en>Azure Cloud Administrator · IAM Administrator · AZ-104 Certified</span>
+    </p>
     <div class="contact-row">
       <span><a href="mailto:yvantankeu@yahoo.fr">yvantankeu@yahoo.fr</a></span>
-      <span>+1 (438) 993-2508</span>
+      <span>+1 (506) 864-2872</span>
       <span>Moncton, NB, Canada</span>
       <span><a href="https://linkedin.com/in/yvan-tankeu" target="_blank">LinkedIn</a></span>
       <span><a href="https://github.com/YvanTankeu" target="_blank">GitHub</a></span>
@@ -266,86 +308,134 @@
     <!-- MAIN -->
     <main class="main">
 
-      <!-- Synthèse -->
+      <!-- Profil -->
       <section class="summary">
-        <h2>Profil</h2>
-        <p>
-          Professionnel certifié Azure (AZ-104), spécialisé en gestion des identités et des accès (IAM).
-          Actuellement Technicien IAM à UNI Moncton, je combine une solide expérience en administration cloud,
+        <h2><span data-fr>Profil</span><span data-en>Profile</span></h2>
+        <p data-fr>
+          Professionnel certifié Azure (AZ-104), administrateur en gestion des identités et des accès (IAM).
+          Actuellement Administrateur IAM à UNI Moncton, je combine une solide expérience en administration cloud,
           sécurité des accès et infrastructure réseau. Rigoureux, orienté solution, je construis activement
           un portfolio de projets Azure pour approfondir mes compétences en architecture cloud.
+        </p>
+        <p data-en>
+          Azure-certified professional (AZ-104) and Identity & Access Management (IAM) Administrator.
+          Currently IAM Administrator at UNI Moncton, I bring solid experience in cloud administration,
+          access security, and network infrastructure. Detail-oriented and solution-driven, I am actively
+          building an Azure project portfolio to deepen my cloud architecture expertise.
         </p>
       </section>
 
       <!-- Expérience -->
       <section>
-        <h2>Expérience professionnelle</h2>
+        <h2><span data-fr>Expérience professionnelle</span><span data-en>Work Experience</span></h2>
 
         <div class="job">
           <div class="job-header">
-            <span class="job-title">Technicien en gestion d'Identités et d'Accès (IAM)</span>
-            <span class="job-date">Janv. 2025 – Présent</span>
+            <span class="job-title">
+              <span data-fr>Administrateur en gestion d'Identités et d'Accès (IAM)</span>
+              <span data-en>Identity & Access Management (IAM) Administrator</span>
+            </span>
+            <span class="job-date"><span data-fr>Janv. 2025 – Présent</span><span data-en>Jan. 2025 – Present</span></span>
           </div>
           <div class="job-company">UNI — Moncton, NB</div>
-          <ul>
+          <ul data-fr>
             <li>Administration quotidienne des accès utilisateurs (octroi, retrait, modification)</li>
             <li>Surveillance des demandes d'accès et des approbations selon les procédures établies</li>
             <li>Soutien technique de premier niveau : authentification, MFA, réinitialisations</li>
             <li>Support aux audits continus du système et du contrôle d'accès</li>
             <li>Documentation et maintien à jour des procédures d'accès</li>
           </ul>
+          <ul data-en>
+            <li>Daily administration of user access (granting, revoking, modifying)</li>
+            <li>Monitoring access requests and approvals to ensure procedures are followed</li>
+            <li>First-level technical support: authentication, MFA, password resets</li>
+            <li>Support for ongoing system and access control audits</li>
+            <li>Documentation and maintenance of access procedures</li>
+          </ul>
         </div>
 
         <div class="job">
           <div class="job-header">
-            <span class="job-title">Administrateur Cloud Azure — Remote</span>
-            <span class="job-date">Janv. 2024 – Présent</span>
+            <span class="job-title">
+              <span data-fr>Administrateur Cloud Azure — Remote</span>
+              <span data-en>Azure Cloud Administrator — Remote</span>
+            </span>
+            <span class="job-date"><span data-fr>Janv. 2024 – Présent</span><span data-en>Jan. 2024 – Present</span></span>
           </div>
-          <div class="job-company">Freelance / Portfolio</div>
-          <ul>
+          <div class="job-company"><span data-fr>Freelance / Portfolio</span><span data-en>Freelance / Portfolio</span></div>
+          <ul data-fr>
             <li>Administration de Microsoft Entra ID, identités cloud et intégration hybride</li>
             <li>Déploiement et gestion de VMs, groupes de ressources et stockage Azure</li>
             <li>Mise en place de réseaux virtuels (VNet), NSG et surveillance via Azure Monitor</li>
             <li>Sauvegardes, restaurations et stratégies de haute disponibilité (HA/DR)</li>
             <li>Optimisation des performances et des coûts des environnements Azure</li>
           </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-header">
-            <span class="job-title">Technicien de soutien bilingue</span>
-            <span class="job-date">Sept. 2023 – Oct. 2024</span>
-          </div>
-          <div class="job-company">Nordia</div>
-          <ul>
-            <li>Support technique téléphonie, internet et messagerie</li>
-            <li>Diagnostic et résolution rapide d'incidents, suivi ticketing (JIRA, Zoho)</li>
+          <ul data-en>
+            <li>Administration of Microsoft Entra ID, cloud identities and hybrid integration</li>
+            <li>Deployment and management of VMs, resource groups and Azure storage</li>
+            <li>Configuration of virtual networks (VNet), NSG and monitoring via Azure Monitor</li>
+            <li>Backups, restores and high availability / disaster recovery strategies (HA/DR)</li>
+            <li>Performance and cost optimization of Azure environments</li>
           </ul>
         </div>
 
         <div class="job">
           <div class="job-header">
-            <span class="job-title">Technicien des Systèmes Informatiques</span>
-            <span class="job-date">Janv. 2017 – Fév. 2020</span>
+            <span class="job-title">
+              <span data-fr>Technicien de soutien bilingue</span>
+              <span data-en>Bilingual Support Technician</span>
+            </span>
+            <span class="job-date"><span data-fr>Sept. 2023 – Oct. 2024</span><span data-en>Sept. 2023 – Oct. 2024</span></span>
           </div>
-          <div class="job-company">SIDPA — Yaoundé, Cameroun</div>
-          <ul>
+          <div class="job-company">Nordia</div>
+          <ul data-fr>
+            <li>Support technique téléphonie, internet et messagerie</li>
+            <li>Diagnostic et résolution rapide d'incidents, suivi ticketing (JIRA, Zoho)</li>
+          </ul>
+          <ul data-en>
+            <li>Technical support for telephony, internet and messaging services</li>
+            <li>Incident diagnosis and resolution, ticket tracking (JIRA, Zoho)</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">
+              <span data-fr>Technicien des Systèmes Informatiques</span>
+              <span data-en>IT Systems Technician</span>
+            </span>
+            <span class="job-date"><span data-fr>Janv. 2017 – Fév. 2020</span><span data-en>Jan. 2017 – Feb. 2020</span></span>
+          </div>
+          <div class="job-company">SIDPA — <span data-fr>Yaoundé, Cameroun</span><span data-en>Yaoundé, Cameroon</span></div>
+          <ul data-fr>
             <li>Mise en place de postes de travail, réseaux et logiciels</li>
             <li>Gestion des mises à jour et continuité opérationnelle des systèmes</li>
+          </ul>
+          <ul data-en>
+            <li>Workstation, network and software setup and configuration</li>
+            <li>System updates management and operational continuity</li>
           </ul>
         </div>
       </section>
 
       <!-- Projets Azure -->
       <section>
-        <h2>Projets Azure — Portfolio</h2>
+        <h2><span data-fr>Projets Azure — Portfolio</span><span data-en>Azure Projects — Portfolio</span></h2>
 
         <div class="project">
-          <div class="project-title">Projet 1 — Déploiement WordPress sur Azure VM</div>
-          <p>
+          <div class="project-title">
+            <span data-fr>Projet 1 — Déploiement WordPress sur Azure VM</span>
+            <span data-en>Project 1 — WordPress Deployment on Azure VM</span>
+          </div>
+          <p data-fr>
             Déployé un serveur WordPress complet sur Azure VM Ubuntu 22.04 via Azure CLI.
             Configuration d'une architecture réseau (VNet, Subnet, NSG) et installation manuelle
             d'une stack LAMP (Apache, MySQL 8.0, PHP).
+          </p>
+          <p data-en>
+            Deployed a full WordPress server on Azure VM Ubuntu 22.04 using Azure CLI.
+            Configured a network architecture (VNet, Subnet, NSG) and manually installed
+            a LAMP stack (Apache, MySQL 8.0, PHP).
           </p>
           <div class="tags">
             <span class="tag">Azure VM</span>
@@ -357,9 +447,86 @@
           </div>
         </div>
 
+        <div class="project">
+          <div class="project-title">
+            <span data-fr>Projet 2 — Architecture Hub-and-Spoke avec Azure Firewall</span>
+            <span data-en>Project 2 — Hub-and-Spoke Architecture with Azure Firewall</span>
+          </div>
+          <p data-fr>
+            Conçu et déployé une topologie Hub-and-Spoke avec 3 VNets (Hub, Dev, Prod), Azure Firewall,
+            VNet Peering bidirectionnel et routes personnalisées (UDR) pour forcer tout le trafic inter-spoke
+            à travers le pare-feu central.
+          </p>
+          <p data-en>
+            Designed and deployed a Hub-and-Spoke topology with 3 VNets (Hub, Dev, Prod), Azure Firewall,
+            bidirectional VNet Peering and User Defined Routes (UDR) to force all inter-spoke traffic
+            through the central firewall.
+          </p>
+          <div class="tags">
+            <span class="tag">VNet Peering</span>
+            <span class="tag">Azure Firewall</span>
+            <span class="tag">UDR</span>
+            <span class="tag">Hub-Spoke</span>
+            <span class="tag">Network Security</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">
+            <span data-fr>Projet 3 — Gestion des Identités &amp; Authentification (AZ-305)</span>
+            <span data-en>Project 3 — Identity Management &amp; Authentication (AZ-305)</span>
+          </div>
+          <p data-fr>
+            Conçu une solution d'identité hybride : synchronisation on-premises via Entra Connect,
+            collaboration B2B avec accès conditionnel, authentification passwordless (FIDO2/Windows Hello),
+            rotation automatique des secrets via Azure Key Vault. Configuration de Google comme fournisseur d'identité.
+          </p>
+          <p data-en>
+            Designed a hybrid identity solution: on-premises synchronization via Entra Connect,
+            B2B collaboration with conditional access, passwordless authentication (FIDO2/Windows Hello),
+            automatic secret rotation via Azure Key Vault. Configured Google as an identity provider.
+          </p>
+          <div class="tags">
+            <span class="tag">Entra Connect</span>
+            <span class="tag">B2B</span>
+            <span class="tag">Conditional Access</span>
+            <span class="tag">Passwordless</span>
+            <span class="tag">Key Vault</span>
+            <span class="tag">Managed Identity</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">
+            <span data-fr>Projet 4 — Gouvernance Azure (Azure Policy &amp; Cost Management)</span>
+            <span data-en>Project 4 — Azure Governance (Azure Policy &amp; Cost Management)</span>
+          </div>
+          <p data-fr>
+            Implémenté une stratégie de gouvernance cloud : hiérarchie Management Groups, Azure Policy
+            pour enforcer les tailles de VMs et conventions de nommage, tags pour le suivi des coûts
+            par projet via Azure Cost Management.
+          </p>
+          <p data-en>
+            Implemented a cloud governance strategy: Management Groups hierarchy, Azure Policy
+            to enforce VM sizing and naming conventions, tags for per-project cost tracking
+            via Azure Cost Management.
+          </p>
+          <div class="tags">
+            <span class="tag">Azure Policy</span>
+            <span class="tag">Management Groups</span>
+            <span class="tag">Cost Management</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">Resource Tags</span>
+          </div>
+        </div>
+
         <div class="project" style="opacity:.5;">
-          <div class="project-title">Projet 2 — Azure Blob Storage + CDN &nbsp;<small>(en cours)</small></div>
-          <p>Hébergement statique avec Azure Blob Storage et distribution via Azure CDN.</p>
+          <div class="project-title">
+            <span data-fr>Projet 5 — Azure Blob Storage + CDN &nbsp;<small>(en cours)</small></span>
+            <span data-en>Project 5 — Azure Blob Storage + CDN &nbsp;<small>(in progress)</small></span>
+          </div>
+          <p data-fr>Hébergement statique avec Azure Blob Storage et distribution via Azure CDN.</p>
+          <p data-en>Static hosting with Azure Blob Storage and distribution via Azure CDN.</p>
           <div class="tags">
             <span class="tag">Storage Account</span>
             <span class="tag">CDN</span>
@@ -376,13 +543,13 @@
 
       <!-- Certifications -->
       <section>
-        <h2>Certifications</h2>
+        <h2><span data-fr>Certifications</span><span data-en>Certifications</span></h2>
 
         <div class="cert">
           <span class="cert-badge">AZ-104</span>
           <div class="cert-info">
             <div class="cert-name">Azure Administrator</div>
-            <div class="cert-date">Microsoft · Mai 2024</div>
+            <div class="cert-date">Microsoft · <span data-fr>Mai</span><span data-en>May</span> 2024</div>
           </div>
         </div>
 
@@ -390,35 +557,34 @@
           <span class="cert-badge">AZ-305</span>
           <div class="cert-info">
             <div class="cert-name">Azure Architect Expert</div>
-            <div class="cert-date">En cours…</div>
+            <div class="cert-date"><span data-fr>En cours…</span><span data-en>In progress…</span></div>
           </div>
         </div>
-
       </section>
 
       <!-- Formation -->
       <section>
-        <h2>Formation</h2>
+        <h2><span data-fr>Formation</span><span data-en>Education</span></h2>
 
         <div class="edu-item">
-          <div class="edu-degree">Diplôme — Internet of Things (IoT)</div>
+          <div class="edu-degree"><span data-fr>Diplôme — Internet des Objets (IoT)</span><span data-en>Diploma — Internet of Things (IoT)</span></div>
           <div class="edu-school">CCNB — Bathurst, NB</div>
-          <div class="edu-date">Juin 2023</div>
+          <div class="edu-date"><span data-fr>Juin 2023</span><span data-en>June 2023</span></div>
         </div>
 
         <div class="edu-item">
-          <div class="edu-degree">Baccalauréat — Génie Logiciel & BD</div>
-          <div class="edu-school">Université de Dschang, Cameroun</div>
-          <div class="edu-date">Nov. 2017 · Évaluation WES</div>
+          <div class="edu-degree"><span data-fr>Baccalauréat — Génie Logiciel & BD</span><span data-en>Bachelor — Software Engineering & DB</span></div>
+          <div class="edu-school"><span data-fr>Université de Dschang, Cameroun</span><span data-en>University of Dschang, Cameroon</span></div>
+          <div class="edu-date"><span data-fr>Nov. 2017 · Évaluation WES</span><span data-en>Nov. 2017 · WES Evaluation</span></div>
         </div>
       </section>
 
       <!-- Compétences -->
       <section>
-        <h2>Compétences</h2>
+        <h2><span data-fr>Compétences</span><span data-en>Skills</span></h2>
 
         <div class="skill-group">
-          <h3>IAM & Sécurité</h3>
+          <h3>IAM &amp; <span data-fr>Sécurité</span><span data-en>Security</span></h3>
           <div class="tags">
             <span class="tag">Entra ID</span>
             <span class="tag">MFA</span>
@@ -445,18 +611,19 @@
         </div>
 
         <div class="skill-group">
-          <h3>Infrastructure</h3>
+          <h3><span data-fr>Infrastructure</span><span data-en>Infrastructure</span></h3>
           <div class="tags">
             <span class="tag">Linux</span>
             <span class="tag">Windows Server</span>
             <span class="tag">M365</span>
             <span class="tag">Docker</span>
             <span class="tag">SSH</span>
+            <span class="tag">IoT</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <h3>Outils</h3>
+          <h3><span data-fr>Outils</span><span data-en>Tools</span></h3>
           <div class="tags">
             <span class="tag">JIRA</span>
             <span class="tag">Zoho</span>
@@ -468,20 +635,31 @@
 
       <!-- Langues -->
       <section>
-        <h2>Langues</h2>
+        <h2><span data-fr>Langues</span><span data-en>Languages</span></h2>
         <div class="lang-item">
-          <span>Français</span>
-          <span class="lang-level">Natif</span>
+          <span><span data-fr>Français</span><span data-en>French</span></span>
+          <span class="lang-level"><span data-fr>Natif</span><span data-en>Native</span></span>
         </div>
         <div class="lang-item">
-          <span>Anglais</span>
-          <span class="lang-level">Intermédiaire</span>
+          <span><span data-fr>Anglais</span><span data-en>English</span></span>
+          <span class="lang-level"><span data-fr>Intermédiaire</span><span data-en>Intermediate</span></span>
         </div>
       </section>
 
     </aside>
   </div>
 </div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-fr]').forEach(el => el.style.display = lang === 'fr' ? '' : 'none');
+    document.querySelectorAll('[data-en]').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.documentElement.lang = lang;
+  }
+  setLang('fr');
+</script>
 
 <!-- Vercel Analytics -->
 <script>
